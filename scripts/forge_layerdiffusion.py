@@ -294,7 +294,7 @@ class LayerDiffusionForForge(scripts.Script):
             layer_lora_model = load_layer_model_state_dict(model_path)
             unet.load_frozen_patcher(layer_lora_model, weight)
 
-        sigma_end = unet.model.predictor.percent_to_sigma(ending_step)
+        sigma_end = unet.model.model_sampling.percent_to_sigma(ending_step)
 
         def remove_concat(cond):
             cond = copy.deepcopy(cond)
