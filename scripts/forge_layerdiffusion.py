@@ -11,10 +11,10 @@ from lib_layerdiffusion.enums import ResizeMode
 from lib_layerdiffusion.utils import rgba2rgbfp32, to255unit8, crop_and_resize_image, forge_clip_encode
 from enum import Enum
 from modules.paths import models_path
-from backend import utils, memory_management
+from ldm_patched.modules import utils, model_management
 
 from lib_layerdiffusion.models import TransparentVAEDecoder, TransparentVAEEncoder
-from backend.sampling.sampling_function import sampling_prepare
+from ldm_patched.modules.samples.sampling_function import sampling_prepare
 from modules.modelloader import load_file_from_url
 from lib_layerdiffusion.attention_sharing import AttentionSharingPatcher
 from modules_forge.forge_canvas.canvas import ForgeCanvas
@@ -23,7 +23,7 @@ from PIL import Image, ImageOps
 
 
 def is_model_loaded(model):
-    return any(model == m.model for m in memory_management.current_loaded_models)
+    return any(model == m.model for m in model_management.current_loaded_models)
 
 
 layer_model_root = os.path.join(models_path, 'layer_model')
