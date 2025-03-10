@@ -17,7 +17,6 @@ from lib_layerdiffusion.models import TransparentVAEDecoder, TransparentVAEEncod
 from modules_forge.forge_sampler import sampling_prepare
 from modules.modelloader import load_file_from_url
 from lib_layerdiffusion.attention_sharing import AttentionSharingPatcher
-from modules_forge.forge_canvas.canvas import ForgeCanvas
 from modules import images
 from PIL import Image, ImageOps
 
