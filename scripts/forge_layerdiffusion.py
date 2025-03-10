@@ -14,7 +14,7 @@ from modules.paths import models_path
 from ldm_patched.modules import utils, model_management
 
 from lib_layerdiffusion.models import TransparentVAEDecoder, TransparentVAEEncoder
-from ldm_patched.modules.samples.sampling_function import sampling_prepare
+from ldm_patched.modules.samplers.sampling_function import sampling_prepare
 from modules.modelloader import load_file_from_url
 from lib_layerdiffusion.attention_sharing import AttentionSharingPatcher
 from modules_forge.forge_canvas.canvas import ForgeCanvas
