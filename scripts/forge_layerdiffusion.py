@@ -67,13 +67,13 @@ class LayerDiffusionForForge(scripts.Script):
             with gr.Row():
                 with gr.Column(visible=False) as fg_col:
                     gr.Markdown('Foreground')
-                    fg_image = ForgeCanvas(numpy=True, no_scribbles=True, height=300).background
+                    fg_image = gr.Image(source='upload', type='numpy', height=300)
                 with gr.Column(visible=False) as bg_col:
                     gr.Markdown('Background')
-                    bg_image = ForgeCanvas(numpy=True, no_scribbles=True, height=300).background
+                    bg_image = gr.Image(source='upload', type='numpy', height=300)
                 with gr.Column(visible=False) as blend_col:
                     gr.Markdown('Blending')
-                    blend_image = ForgeCanvas(numpy=True, no_scribbles=True, height=300).background
+                    blend_image = gr.Image(source='upload', type='numpy', height=300)
 
             gr.HTML('</br>')  # some strange gradio problems
 
