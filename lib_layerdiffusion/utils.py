@@ -1,6 +1,6 @@
 import numpy as np
 from lib_layerdiffusion.enums import ResizeMode
-from backend import memory_management
+from ldm_patched.modules import model_management
 import cv2
 import torch
 
@@ -10,7 +10,7 @@ def forge_clip_encode(sd_model, text):
         return None
 
     cond = sd_model.get_learned_conditioning([text])
-    return cond.to(memory_management.get_torch_device())
+    return cond.to(model_management.get_torch_device())
 
 
 def rgba2rgbfp32(x):
